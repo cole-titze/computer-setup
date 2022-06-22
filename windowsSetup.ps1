@@ -8,7 +8,10 @@ winget install JetBrains.PyCharm.Community
 winget install Apple.iTunes
 winget install Apple.iTunes     # had to run twice
 # winget install LogMeIn.LastPass      // Not working
+winget install Python.Python.3
 
 # Add git config
 git config --global user.email "cole.titze@outlook.com"
 git config --global user.name "Cole"
+
+winget upgrade --all
