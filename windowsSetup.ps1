@@ -1,6 +1,7 @@
 # Add last-pass extension after download
 winget install Mozilla.Firefox
 winget install Microsoft.VisualStudioCode
+winget install Microsoft.AzureDataStudio
 winget install Microsoft.VisualStudio.2022.Community
 winget install Git.Git
 # Go through githubs adding ssh key tutorial
