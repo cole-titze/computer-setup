@@ -5,7 +5,7 @@ sudo apt-get install git
 ```
 ```
 git clone https://github.com/cole-titze/ComputerSetup.git
-cd ComputerSetup
+cd ComputerSetup/Ubuntu
 chmod u+r+x *
 source ubuSetup.sh
 ```
