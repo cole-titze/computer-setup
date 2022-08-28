@@ -4,8 +4,8 @@ sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install git
 ```
 ```
-git clone https://github.com/coleTitze/StartupScripts.git
-cd StartupScripts/ubuntu
+git clone https://github.com/cole-titze/ComputerSetup.git
+cd ComputerSetup
 chmod u+r+x *
 source ubuSetup.sh
 ```
