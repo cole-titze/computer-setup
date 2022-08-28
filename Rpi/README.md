@@ -2,9 +2,6 @@
 ```
 sudo apt-get update && sudo apt-get upgrade 
 sudo apt-get install git
-sudo apt install snapd
-sudo reboot now
-sudo snap install core
 ```
 ```
 git clone https://github.com/cole-titze/ComputerSetup.git
@@ -17,4 +14,6 @@ source rpiSetup.sh
 ```
 cd && rm -rf StartupScripts
 git clone git@github.com:coleTitze/StartupScripts.git
+source nhlDeploy.sh
 ```
++ Add appsettings.Local.json for each repo
