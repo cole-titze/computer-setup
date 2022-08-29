@@ -17,6 +17,8 @@ cat ~/.ssh/id_ed25519.pub
 ## 
 ```
 cd && rm -rf ComputerSetup
+mkdir source
+mkdir source/repos
 git clone git@github.com:cole-titze/ComputerSetup.git
 cd ComputerSetup/Rpi/ && source nhlDeploy.sh
 ```
