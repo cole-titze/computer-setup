@@ -10,9 +10,6 @@ chmod u+r+x *
 source rpiSetup.sh
 ```
 ## [Add key to github](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
-```
-cat ~/.ssh/id_ed25519.pub
-```
 + Copy output and put in new ssh key
 ## 
 ```
@@ -23,6 +20,16 @@ git clone git@github.com:cole-titze/ComputerSetup.git
 cd ComputerSetup/Rpi/ && source nhlDeploy.sh
 ```
 # Add appsettings.Local.json for each repo
++ nhl-data-gatherer
+```
+cd source/repos/nhl-data-gatherer/LocalRunning
+nano appsettings.Local.json
+```
++ nhl-player-gatherer
+```
+cd source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
+nano appsettings.Local.json
+```
 # Add with crontab -e
 + 0 0 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
 + 0 0 * * * ~/Releases/Scripts/nhl-player-gatherer.sh
