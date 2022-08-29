@@ -18,7 +18,7 @@ cat ~/.ssh/id_ed25519.pub
 ```
 cd && rm -rf ComputerSetup
 git clone git@github.com:cole-titze/ComputerSetup.git
-~/ComputerSetup/Rpi source nhlDeploy.sh
+cd ComputerSetup/Rpi/ && source nhlDeploy.sh
 ```
 # Add appsettings.Local.json for each repo
 # Add with crontab -e
