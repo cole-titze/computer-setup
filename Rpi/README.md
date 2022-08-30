@@ -22,14 +22,14 @@ cd ComputerSetup/Rpi/ && source nhlDeploy.sh
 # Add appsettings.Local.json for each repo
 + nhl-data-gatherer
 ```
-cd source/repos/nhl-data-gatherer/LocalRunning
+cd ~/source/repos/nhl-data-gatherer/LocalRunning
 nano appsettings.Local.json
 ```
 + nhl-player-gatherer
 ```
-cd source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
+cd ~/source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
 nano appsettings.Local.json
 ```
 # Add with crontab -e
-+ 0 0 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
++ 0 1 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
 + 0 0 * * * ~/Releases/Scripts/nhl-player-gatherer.sh
