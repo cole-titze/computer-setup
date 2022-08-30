@@ -30,6 +30,11 @@ nano appsettings.Local.json
 cd ~/source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
 nano appsettings.Local.json
 ```
++ VegasOddsGetter (Update driver to FreeTDS)
+```
+cd ~/source/repos/VegasOddsGetter/LocalRunning
+nano local.settings.json
+```
 # Add with crontab -e
 + 0 1 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
 + 0 0 * * * ~/Releases/Scripts/nhl-player-gatherer.sh
