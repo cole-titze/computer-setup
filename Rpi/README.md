@@ -1,6 +1,7 @@
 ## Initial Rpi Setup
 ```
 sudo apt-get update && sudo apt-get upgrade 
+sudo reboot now
 sudo apt-get install git
 ```
 ```
