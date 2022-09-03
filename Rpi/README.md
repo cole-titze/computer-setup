@@ -32,8 +32,19 @@ nano appsettings.Local.json
 ```
 + VegasOddsGetter (Update driver to FreeTDS)
 ```
-cd ~/source/repos/VegasOddsGetter/LocalRunning
+cd ~/source/repos/VegasOddsGetter
 nano local.settings.json
+```
++ Create FreeTDS driver
+```
+sudo nano /etc/odbcinst.ini
+```
+```
+[FreeTDS]
+Description = FreeTDS unixODBC Driver
+Driver = /usr/lib/aarch64-linux-gnu/odbc/libtdsodbc.so
+Setup = /usr/lib/aarch64-linux-gnu/odbc/libtdsodbc.so
+UsageCount = 1
 ```
 # Add with crontab -e
 + 0 1 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
