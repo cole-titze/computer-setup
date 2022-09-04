@@ -5,8 +5,8 @@ sudo reboot now
 sudo apt-get install git
 ```
 ```
-git clone https://github.com/cole-titze/ComputerSetup.git
-cd ComputerSetup/Rpi
+git clone https://github.com/cole-titze/computer-setup.git
+cd computer-setup/Rpi
 chmod u+r+x *
 source rpiSetup.sh
 ```
@@ -14,11 +14,11 @@ source rpiSetup.sh
 + Copy output and put in new ssh key
 ## 
 ```
-cd && rm -rf ComputerSetup
+cd && rm -rf computer-setup
 mkdir source
 mkdir source/repos
-git clone git@github.com:cole-titze/ComputerSetup.git
-cd ComputerSetup/Rpi/ && source nhlDeploy.sh
+git clone git@github.com:cole-titze/computer-setup.git
+cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 # Add appsettings.Local.json for each repo
 + nhl-data-gatherer
@@ -31,21 +31,10 @@ nano appsettings.Local.json
 cd ~/source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
 nano appsettings.Local.json
 ```
-+ VegasOddsGetter (Update driver to FreeTDS)
++ vegas-odds-getter
 ```
-cd ~/source/repos/VegasOddsGetter
+cd ~/source/repos/vegas-odds-getter
 nano local.settings.json
-```
-+ Create FreeTDS driver
-```
-sudo nano /etc/odbcinst.ini
-```
-```
-[FreeTDS]
-Description = FreeTDS unixODBC Driver
-Driver = /usr/lib/aarch64-linux-gnu/odbc/libtdsodbc.so
-Setup = /usr/lib/aarch64-linux-gnu/odbc/libtdsodbc.so
-UsageCount = 1
 ```
 # Add with crontab -e
 + 0 1 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
