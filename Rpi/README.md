@@ -37,5 +37,6 @@ cd ~/source/repos/vegas-odds-getter
 nano local.settings.json
 ```
 # Add with crontab -e
-+ 0 1 * * * ~/Releases/Scripts/nhl-data-gatherer.sh
-+ 0 0 * * * ~/Releases/Scripts/nhl-player-gatherer.sh
++ 0 2 * * * ~/releases/Scripts/nhl-player-gatherer.sh
++ 0 3 * * * ~/releases/Scripts/nhl-data-gatherer.sh
++ 0 4 * * * ~/releases/Scripts/vegas-odds-getter.sh
