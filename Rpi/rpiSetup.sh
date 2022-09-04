@@ -6,8 +6,6 @@ echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
 source ~/.bashrc
 # Install pip and odbc
 sudo apt-get install python3-pip freetds-dev freetds-bin libssl-dev
- # Install pymssql
-sudo pip3 install pymssql
 # Create ssh key
 ssh-keygen -t ed25519 -C "cole.titze@outlook.com"
 eval "$(ssh-agent -s)"
