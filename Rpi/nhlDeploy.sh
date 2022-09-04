@@ -10,5 +10,5 @@ pip3 install -r requirements.txt
 # Create release directory
 cd
 git clone git@github.com:cole-titze/releases.git
-cd releases/Scripts && chmod u+r+x *
+cd ~/releases/Scripts && chmod u+r+x *
 export PYTHONPATH="${PYTHONPATH}:~/releases/vegas-odds-getter"
