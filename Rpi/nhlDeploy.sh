@@ -4,8 +4,11 @@ git clone git@github.com:cole-titze/nhl-player-gatherer.git
 git clone git@github.com:cole-titze/nhl-data-gatherer.git
 git clone git@github.com:cole-titze/nhl-odds-web-backend.git
 git clone git@github.com:cole-titze/vegas-odds-getter.git
+git clone git@github.com:cole-titze/nhl-game-predictor.git
 # Install python requirements
 cd ~/source/repos/vegas-odds-getter/
+pip3 install -r requirements.txt
+cd ~/source/repos/nhl-game-predictor/
 pip3 install -r requirements.txt
 # Create release directory
 cd

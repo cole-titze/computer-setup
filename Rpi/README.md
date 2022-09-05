@@ -31,6 +31,11 @@ nano appsettings.Local.json
 cd ~/source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
 nano appsettings.Local.json
 ```
++ nhl-game-predictor
+```
+cd ~/source/repos/nhl-game-predictor/nhl-game-predictor
+nano local.settings.json
+```
 + vegas-odds-getter
 ```
 cd ~/source/repos/vegas-odds-getter
@@ -47,4 +52,5 @@ nano /home/deploy/.local/lib/python3.9/site-packages/fake_useragent/utils.py
 0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-gatherer.sh
 0 4 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
+0 6 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
 ```
