@@ -33,7 +33,7 @@ nano appsettings.Local.json
 ```
 + nhl-game-predictor
 ```
-cd ~/source/repos/nhl-game-predictor/nhl-game-predictor
+cd ~/source/repos/nhl-game-predictor
 nano local.settings.json
 ```
 + vegas-odds-getter
