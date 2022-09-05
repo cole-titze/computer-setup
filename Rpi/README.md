@@ -42,6 +42,9 @@ nano /home/deploy/.local/lib/python3.9/site-packages/fake_useragent/utils.py
 ```
 + replace: html = html.split('<table class="w3-table-all notranslate">')[1] with ws
 # Add with crontab -e
-+ 0 2 * * * /bin/bash ~/releases/Scripts/nhl-player-gatherer.sh
-+ 0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-gatherer.sh
-+ 0 4 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
+```
+0 2 * * * /bin/bash ~/releases/Scripts/nhl-player-gatherer.sh
+0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-gatherer.sh
+0 4 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
+0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
+```
