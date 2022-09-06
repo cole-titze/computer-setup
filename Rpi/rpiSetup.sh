@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install dotnet
+# Install dotnet (might be a better way with apt)
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
 echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
