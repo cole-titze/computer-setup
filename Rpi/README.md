@@ -58,4 +58,5 @@ nano /home/deploy/.local/lib/python3.9/site-packages/fake_useragent/utils.py
 0 4 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 6 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
+0 0 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-backend.sh
 ```
