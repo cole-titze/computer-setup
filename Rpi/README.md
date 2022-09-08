@@ -21,6 +21,11 @@ git clone git@github.com:cole-titze/computer-setup.git
 cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 # Add appsettings.Local.json for each repo
++ nhl-odds-web-backend
+```
+cd ~/source/repos/nhl-odds-web-backend/WebApi
+nano appsettings.json
+```
 + nhl-data-gatherer
 ```
 cd ~/source/repos/nhl-data-gatherer/LocalRunning

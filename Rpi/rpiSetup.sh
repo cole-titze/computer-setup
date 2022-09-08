@@ -6,6 +6,9 @@ echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
 source ~/.bashrc
 # Install pip and odbc
 sudo apt-get install python3-pip freetds-dev freetds-bin libssl-dev
+# Install docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 # Create ssh key
 ssh-keygen -t ed25519 -C "cole.titze@outlook.com"
 eval "$(ssh-agent -s)"
