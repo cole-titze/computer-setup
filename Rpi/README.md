@@ -1,6 +1,19 @@
 ## Initial Rpi Setup
 ```
-sudo apt-get update && sudo apt-get upgrade 
+sudo apt-get update && sudo apt-get upgrade
+```
+# Set static ip
+```
+sudo nano /etc/dhcpcd.conf
+```
+```
+interface eth0
+metric 300
+static ip_address=192.168.1.19/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.1.1
+```
+```
 sudo reboot now
 sudo apt-get install git
 ```
@@ -20,37 +33,31 @@ mkdir source/repos
 git clone git@github.com:cole-titze/computer-setup.git
 cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
-# Add appsettings.Local.json for each repo
+# Add environment variables for each repo
++ github packages read token
+```
+nano ~/secrets/github_pat
+```
 + nhl-odds-web-backend
 ```
-cd ~/source/repos/nhl-odds-web-backend/WebApi
-nano appsettings.json
+nano ~/secrets/.env-backend
 ```
 + nhl-data-gatherer
 ```
-cd ~/source/repos/nhl-data-gatherer/LocalRunning
-nano appsettings.Local.json
+nano ~/secrets/.env-data-getter
 ```
 + nhl-player-gatherer
 ```
-cd ~/source/repos/nhl-player-gatherer/nhl-player-trigger/LocalRunning
-nano appsettings.Local.json
+nano ~/secrets/.env-player-getter
 ```
 + nhl-game-predictor
 ```
-cd ~/source/repos/nhl-game-predictor
-nano local.settings.json
+nano ~/secrets/.env-game-predictor
 ```
 + vegas-odds-getter
 ```
-cd ~/source/repos/vegas-odds-getter
-nano local.settings.json
+nano ~/secrets/.env-vegas-getter
 ```
-+ Update vegas-odds-getter dependency
-```
-nano /home/deploy/.local/lib/python3.9/site-packages/fake_useragent/utils.py
-```
-+ replace: html = html.split('<table class="w3-table-all notranslate">')[1] with ws
 # Add with crontab -e
 ```
 0 2 * * * /bin/bash ~/releases/Scripts/nhl-player-gatherer.sh
@@ -59,4 +66,5 @@ nano /home/deploy/.local/lib/python3.9/site-packages/fake_useragent/utils.py
 0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 6 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
 0 0 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-backend.sh
+0 0 * * * /bin/bash ~/releases/Scripts/nhl-predictor-frontend-react.sh
 ```

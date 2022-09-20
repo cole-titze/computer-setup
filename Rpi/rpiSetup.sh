@@ -1,11 +1,4 @@
 #!/bin/bash
-# Install dotnet (might be a better way with apt)
-curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current
-echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
-echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
-source ~/.bashrc
-# Install pip and odbc
-sudo apt-get install python3-pip freetds-dev freetds-bin libssl-dev
 # Install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
