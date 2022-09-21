@@ -64,12 +64,13 @@ nano ~/secrets/.env-vegas-getter
 ```
 # Add with crontab -e
 ```
+# Nhl applications running four times a day
+0 */6 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 # Nhl applications: updating and running nightly
 0 0 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-backend.sh
 0 0 * * * /bin/bash ~/releases/Scripts/nhl-predictor-frontend-react.sh
 0 2 * * * /bin/bash ~/releases/Scripts/nhl-player-gatherer.sh
 0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-gatherer.sh
-0 4 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 6 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
 # Monthly Updates and docker cleaning
