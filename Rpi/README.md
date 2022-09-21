@@ -20,8 +20,6 @@ sudo reboot now
 ## Install git and clone repos
 ```
 sudo apt-get install git -y
-```
-```
 git clone https://github.com/cole-titze/computer-setup.git
 cd computer-setup/Rpi
 chmod u+r+x *
