@@ -1,11 +1,12 @@
 ## Initial Rpi Setup
 ```
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update -y && sudo apt-get upgrade -y
 ```
-# Set static ip
+## Set static ip
 ```
 sudo nano /etc/dhcpcd.conf
 ```
++ Update hostname to given hostname
 ```
 interface eth0
 metric 300
@@ -15,7 +16,10 @@ static domain_name_servers=192.168.1.1
 ```
 ```
 sudo reboot now
-sudo apt-get install git
+```
+## Install git and clone repos
+```
+sudo apt-get install git -y
 ```
 ```
 git clone https://github.com/cole-titze/computer-setup.git
@@ -36,7 +40,7 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 # Add environment variables for each repo
 + github packages read token
 ```
-nano ~/secrets/github_pat
+nano ~/secrets/.github_pat
 ```
 + nhl-odds-web-backend
 ```
