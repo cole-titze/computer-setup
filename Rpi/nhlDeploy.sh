@@ -4,4 +4,4 @@ cd
 git clone git@github.com:cole-titze/releases.git
 cd ~/releases/Scripts && chmod u+r+x *
 # Copy env files
-cp -r ~/computer-setup/Rpi/secrets/* ~/
+cp -r ~/computer-setup/Rpi/secrets ~/
