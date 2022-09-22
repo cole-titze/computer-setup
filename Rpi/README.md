@@ -36,10 +36,6 @@ git clone git@github.com:cole-titze/computer-setup.git
 cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 # Add environment variables for each repo
-+ github packages read token
-```
-nano ~/secrets/.github_pat
-```
 + nhl-odds-web-backend
 ```
 nano ~/secrets/.env-backend
