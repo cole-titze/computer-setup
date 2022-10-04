@@ -71,7 +71,7 @@ nano ~/secrets/.env-nhl-log-loss-getter
 0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-gatherer.sh
 0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 0 6 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
-0 7 * * * /bin/bash ~/releses/Scripts/nhl-log-loss-getter.sh
+0 7 * * * /bin/bash ~/releases/Scripts/nhl-log-loss-getter.sh
 # Monthly Updates and docker cleaning
 0 23 1 * * /bin/bash ~/releases/Scripts/update.sh
 ```
