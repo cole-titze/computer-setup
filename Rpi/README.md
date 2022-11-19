@@ -83,5 +83,7 @@ sudo docker pull mcr.microsoft.com/azure-sql-edge:latest
 sudo docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=<YOUR PASSWORD>' -p 1433:1433 --name azuresqledge -d mcr.microsoft.com/azure-sql-edge
 ```
 + Connect to the database from Azure Data Studio (server name is your pi's ip no port is needed)
-+ Run the deploy script from the nhl-database repository
++ Run the database deploy script from the nhl-database repository
++ Run the table deploy script from the nhl-database repository
++ Run the team post-deploy script from the nhl-database repository
 + TODO: Backup process
