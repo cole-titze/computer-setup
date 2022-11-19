@@ -75,3 +75,13 @@ nano ~/secrets/.env-nhl-log-loss-getter
 # Monthly Updates and docker cleaning
 0 23 1 * * /bin/bash ~/releases/Scripts/update.sh
 ```
+# Database Deployment
++ This is not a polished process. Automating deploying mssql server to arm devices is not ideal, so most of this process is manual.
++ Connect to deployment server and update password and run:
+```
+sudo docker pull mcr.microsoft.com/azure-sql-edge:latest 
+sudo docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=<YOUR PASSWORD>' -p 1433:1433 --name azuresqledge -d mcr.microsoft.com/azure-sql-edge
+```
++ Connect to the database from Azure Data Studio (server name is your pi's ip not port is needed)
++ Run the deploy script from the nhl-database repository
++ TODO: Backup process
