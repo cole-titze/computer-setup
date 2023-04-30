@@ -50,9 +50,13 @@ nano ~/secrets/.env-data-cleaner
 ```
 nano ~/secrets/.env-vegas-getter
 ```
++ nhl-game-predictor
+```
+nano ~/secrets/.env-game-predictor
+```
 + nhl-log-loss-getter
 ```
-nano ~/secrets/.env-nhl-log-loss-getter
+nano ~/secrets/.env-log-loss-getter
 ```
 # Add with crontab -e
 ```
