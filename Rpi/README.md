@@ -30,8 +30,6 @@ source rpiSetup.sh
 ## 
 ```
 cd && rm -rf computer-setup
-mkdir source
-mkdir source/repos
 git clone git@github.com:cole-titze/computer-setup.git
 cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
