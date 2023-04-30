@@ -40,17 +40,13 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 nano ~/secrets/.env-backend
 ```
-+ nhl-data-gatherer
++ nhl-data-getter
 ```
 nano ~/secrets/.env-data-getter
 ```
-+ nhl-player-gatherer
++ nhl-data-cleaner
 ```
-nano ~/secrets/.env-player-getter
-```
-+ nhl-game-predictor
-```
-nano ~/secrets/.env-game-predictor
+nano ~/secrets/.env-data-cleaner
 ```
 + vegas-odds-getter
 ```
@@ -63,15 +59,14 @@ nano ~/secrets/.env-nhl-log-loss-getter
 # Add with crontab -e
 ```
 # Nhl applications running four times a day
-0 */6 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
+# 0 */6 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
 # Nhl applications: updating and running nightly
 0 0 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-backend.sh
-0 0 * * * /bin/bash ~/releases/Scripts/nhl-predictor-frontend-react.sh
-0 2 * * * /bin/bash ~/releases/Scripts/nhl-player-gatherer.sh
-0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-gatherer.sh
-0 5 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
-0 6 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
-0 7 * * * /bin/bash ~/releases/Scripts/nhl-log-loss-getter.sh
+0 0 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-frontend.sh
+0 1 * * * /bin/bash ~/releases/Scripts/nhl-data-getter.sh
+0 2 * * * /bin/bash ~/releases/Scripts/nhl-data-cleaner.sh
+0 3 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
+0 4 * * * /bin/bash ~/releases/Scripts/nhl-log-loss-getter.sh
 # Monthly Updates and docker cleaning
 0 23 1 * * /bin/bash ~/releases/Scripts/update.sh
 ```
