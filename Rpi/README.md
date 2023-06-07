@@ -1,12 +1,18 @@
 ## Initial Rpi Setup
 ```
+sudo raspi-config
+```
++ Set ssh to yes
++ Update hostname to deploy
++ Change timezone
+```
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 ## Set static ip
 ```
 sudo nano /etc/dhcpcd.conf
 ```
-+ Update hostname to given hostname
++ Update hostname to deploy
 ```
 interface eth0
 metric 300
