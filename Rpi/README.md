@@ -3,7 +3,7 @@
 sudo raspi-config
 ```
 + Set ssh to yes
-+ Update hostname to deploy
++ Update hostname to deploypi
 + Change timezone
 ```
 sudo apt-get update -y && sudo apt-get upgrade -y
@@ -12,7 +12,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 sudo nano /etc/dhcpcd.conf
 ```
-+ Update hostname to deploy
++ Update hostname to deploypi
 ```
 interface eth0
 metric 300
