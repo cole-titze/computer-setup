@@ -16,9 +16,9 @@ sudo nano /etc/dhcpcd.conf
 ```
 interface eth0
 metric 300
-static ip_address=192.168.1.19/24
-static routers=192.168.1.1
-static domain_name_servers=192.168.1.1
+static ip_address=10.0.0.19/24
+static routers=10.0.0.1
+static domain_name_servers=10.0.0.1
 ```
 ```
 sudo reboot now
