@@ -68,9 +68,11 @@ nano ~/secrets/.env-log-loss-getter
 ```
 # Nightly Updates and docker cleaning
 0 0 * * * /bin/bash ~/releases/Scripts/update.sh
+0 1 * * * /bin/bash ~/releases/Scripts/pi-hole.sh
+0 1 * * * /bin/bash ~/releases/Scripts/portainer.sh
 
 # Nhl applications running four times a day
-# 0 */6 * * * /bin/bash ~/releases/Scripts/vegas-odds-getter.sh
+# 0 */6 * * * /bin/bash ~/releases/Scripts/nhl-vegas-odds-getter.sh
 
 # Nhl applications: updating and running nightly
 0 1 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-backend.sh
