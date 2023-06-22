@@ -68,19 +68,20 @@ nano ~/secrets/.env-log-loss-getter
 ```
 # Nightly Updates and docker cleaning
 0 0 * * * /bin/bash ~/releases/Scripts/update.sh
-0 1 * * * /bin/bash ~/releases/Scripts/pi-hole.sh
-0 1 * * * /bin/bash ~/releases/Scripts/portainer.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/pi-hole.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/portainer.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/home-assistant.sh
 
 # Nhl applications running four times a day
 # 0 */6 * * * /bin/bash ~/releases/Scripts/nhl-vegas-odds-getter.sh
 
 # Nhl applications: updating and running nightly
-0 1 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-backend.sh
-0 1 * * * /bin/bash ~/releases/Scripts/nhl-odds-web-frontend.sh
-0 2 * * * /bin/bash ~/releases/Scripts/nhl-data-getter.sh
-0 3 * * * /bin/bash ~/releases/Scripts/nhl-data-cleaner.sh
-0 4 * * * /bin/bash ~/releases/Scripts/nhl-game-predictor.sh
-0 5 * * * /bin/bash ~/releases/Scripts/nhl-log-loss-getter.sh
+0 1 * * * /bin/bash ~/releases/Scripts/nhl/nhl-odds-web-backend.sh
+0 1 * * * /bin/bash ~/releases/Scripts/nhl/nhl-odds-web-frontend.sh
+0 2 * * * /bin/bash ~/releases/Scripts/nhl/nhl-data-getter.sh
+0 3 * * * /bin/bash ~/releases/Scripts/nhl/nhl-data-cleaner.sh
+0 4 * * * /bin/bash ~/releases/Scripts/nhl/nhl-game-predictor.sh
+0 5 * * * /bin/bash ~/releases/Scripts/nhl/nhl-log-loss-getter.sh
 ```
 # Database Deployment
 + This is not a polished process. Automating deploying mssql server to arm devices is not ideal, so most of this process is manual.
