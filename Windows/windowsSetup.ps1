@@ -1,5 +1,6 @@
 # Add last-pass extension after download and disable firefox pwd manager 
 winget install Mozilla.Firefox
+winget install Discord.Discord
 winget install Nvidia.GeForceExperience
 winget install Valve.Steam
 winget install Microsoft.VisualStudioCode
