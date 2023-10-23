@@ -74,7 +74,7 @@ nano ~/secrets/.env-data-getter
 nano ~/secrets/.env-data-cleaner
 ```
 
-- vegas-odds-getter
+- nhl-bookmaker-odds-getter
 
 ```
 nano ~/secrets/.env-vegas-getter
@@ -111,8 +111,9 @@ nano ~/secrets/.env-log-loss-getter
 0 1 * * * /bin/bash ~/releases/Scripts/nhl/nhl-odds-web-frontend.sh
 0 2 * * * /bin/bash ~/releases/Scripts/nhl/nhl-data-getter.sh
 0 3 * * * /bin/bash ~/releases/Scripts/nhl/nhl-data-cleaner.sh
-0 4 * * * /bin/bash ~/releases/Scripts/nhl/nhl-game-predictor.sh
-0 5 * * * /bin/bash ~/releases/Scripts/nhl/nhl-log-loss-getter.sh
+0 4 * * * /bin/bash ~/releases/Scripts/nhl/nhl-bookmaker-odds-getter.sh
+0 5 * * * /bin/bash ~/releases/Scripts/nhl/nhl-game-predictor.sh
+0 6 * * * /bin/bash ~/releases/Scripts/nhl/nhl-log-loss-getter.sh
 ```
 
 # Database Deployment
