@@ -148,3 +148,5 @@ curl -L https://install.pivpn.io | bash
 pivpn add
 pivpn -qr
 ```
+
+- [Pivpn Docs](https://docs.pivpn.io/wireguard)
