@@ -103,6 +103,7 @@ nano ~/secrets/.env-log-loss-getter
 0 1 * * * /bin/bash ~/releases/Scripts/containers/portainer.sh
 0 1 * * * /bin/bash ~/releases/Scripts/containers/home-assistant.sh
 0 1 * * * /bin/bash ~/releases/Scripts/containers/magic-mirror.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/z2m.sh
 
 # Nhl applications running four times a day
 # 0 */6 * * * /bin/bash ~/releases/Scripts/nhl-vegas-odds-getter.sh
