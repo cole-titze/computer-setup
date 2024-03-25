@@ -151,3 +151,12 @@ pivpn -qr
 ```
 
 - [Pivpn Docs](https://docs.pivpn.io/wireguard)
+
+# Zigbee2mqtt Setup
+```
+mkdir z2m && cd ~/z2m
+wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
+cd data
+sed -i 's/homeassistant: false/homeassistant: true/g' configuration.yaml
+sed -i 's/ttyACM0/ttyUSB0/g' configuration.yaml
+```
