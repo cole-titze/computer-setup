@@ -58,6 +58,7 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 
 ```
 # Constant updates
+# <VPN setup will add script here>
 
 # Nightly Updates and docker cleaning
 0 0 * * * /bin/bash ~/releases/Scripts/update.sh
@@ -85,6 +86,8 @@ pivpn -qr
 ```
 
 - [Pivpn Docs](https://docs.pivpn.io/wireguard)
+
+# [Restore HomeAssistant]([https://www.home-assistant.io/integrations/backup/](https://www.home-assistant.io/common-tasks/os/#restoring-a-backup))
 
 
 
