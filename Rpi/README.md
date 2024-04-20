@@ -54,6 +54,43 @@ git clone git@github.com:cole-titze/computer-setup.git
 cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 
+# Add with crontab -e
+
+```
+# Constant updates
+
+# Nightly Updates and docker cleaning
+0 0 * * * /bin/bash ~/releases/Scripts/update.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/pi-hole.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/portainer.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/home-assistant.sh
+0 1 * * * /bin/bash ~/releases/Scripts/containers/magic-mirror.sh
+```
+
+# [Setup VPN](https://www.duckdns.org/)
+
+- Follow the steps under "Install"
+- Port forward pi's ip (10.0.0.19:51820)
+- Download and run pivpn setup
+
+```
+curl -L https://install.pivpn.io | bash
+```
+
+- Download wireguard app and scan qr from
+
+```
+pivpn add
+pivpn -qr
+```
+
+- [Pivpn Docs](https://docs.pivpn.io/wireguard)
+
+
+
+## Nhl Setup
++ If you want to run the nhl project, use this section
+
 # Add environment variables for each repo
 
 - nhl-odds-web-backend
@@ -95,16 +132,6 @@ nano ~/secrets/.env-log-loss-getter
 # Add with crontab -e
 
 ```
-# Constant updates
-
-# Nightly Updates and docker cleaning
-0 0 * * * /bin/bash ~/releases/Scripts/update.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/pi-hole.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/portainer.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/home-assistant.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/magic-mirror.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/z2m.sh
-
 # Nhl applications running four times a day
 # 0 */6 * * * /bin/bash ~/releases/Scripts/nhl-vegas-odds-getter.sh
 
@@ -117,6 +144,7 @@ nano ~/secrets/.env-log-loss-getter
 0 5 * * * /bin/bash ~/releases/Scripts/nhl/nhl-game-predictor.sh
 0 6 * * * /bin/bash ~/releases/Scripts/nhl/nhl-log-loss-getter.sh
 ```
+
 
 # Database Deployment
 
@@ -133,31 +161,3 @@ sudo docker run --restart=always --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSS
 - Run the table deploy script from the nhl-database repository
 - Run the team post-deploy script from the nhl-database repository
 - TODO: Backup process
-
-# [Setup VPN](https://www.duckdns.org/)
-
-- Follow the steps under "Install"
-- Port forward pi's ip (10.0.0.19:51820)
-- Download and run pivpn setup
-
-```
-curl -L https://install.pivpn.io | bash
-```
-
-- Download wireguard app and scan qr from
-
-```
-pivpn add
-pivpn -qr
-```
-
-- [Pivpn Docs](https://docs.pivpn.io/wireguard)
-
-# Zigbee2mqtt Setup
-```
-mkdir z2m && cd ~/z2m
-wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
-cd data
-sed -i 's/homeassistant: false/homeassistant: true/g' configuration.yaml
-sed -i 's/ttyACM0/ttyUSB0/g' configuration.yaml
-```
