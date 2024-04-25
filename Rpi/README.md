@@ -12,7 +12,7 @@ sudo raspi-config
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
-## Set static ip
+## TODO: Set static ip (No longer works with bullseye)
 
 ```
 sudo nano /etc/dhcpcd.conf
