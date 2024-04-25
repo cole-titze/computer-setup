@@ -12,8 +12,10 @@ sudo raspi-config
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
-## TODO: Set static ip (No longer works with bullseye)
+## Set static ip
++ If you run the vpn it will set up a static ip address for you
 
++ Otherwise before bullseye this works:
 ```
 sudo nano /etc/dhcpcd.conf
 ```
