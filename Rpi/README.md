@@ -80,7 +80,7 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 curl -L https://install.pivpn.io | bash
 ```
-
+- During install use the duckdns domain instead of an ip (<domain>.duckdns.org)
 - Download wireguard app and scan qr from
 
 ```
