@@ -70,6 +70,7 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 
 # [Setup VPN](https://www.duckdns.org/)
 
+- Login to get easy install directions
 - Follow the steps under "Install"
 - Port forward pi's ip (10.0.0.19:51820)
 - Download and run pivpn setup
