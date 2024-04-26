@@ -43,6 +43,7 @@ sudo nano /root/.bashrc
 # Custom shutdown and restart commands
 alias shutdown='sudo docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped." && sudo shutdown'
 alias reboot='sudo docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped." && sudo reboot'
+alias dockerstop='sudo docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped."'
 ```
 
 
