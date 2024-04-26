@@ -36,7 +36,7 @@ sudo reboot now
 
 ## Add custom bash commands
 ```
-nano ~/.bashrc
+sudo nano /root/.bashrc
 ```
 + Add custom shutdown and restart to give time for docker containers to stop
 ```
