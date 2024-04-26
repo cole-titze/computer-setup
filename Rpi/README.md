@@ -41,8 +41,8 @@ sudo nano /root/.bashrc
 + Add custom shutdown and restart to give time for docker containers to stop
 ```
 # Custom shutdown and restart commands
-alias shutdown='docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped." && sudo shutdown'
-alias reboot='docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped." && sudo reboot'
+alias shutdown='sudo docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped." && sudo shutdown'
+alias reboot='sudo docker stop -t 600 $(docker ps -a -q) && echo "Docker containers have been stopped." && sudo reboot'
 ```
 
 
