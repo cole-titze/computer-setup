@@ -83,6 +83,8 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 0 1 * * * /bin/bash ~/releases/Scripts/containers/magic-mirror.sh
 ```
 
+-----
+
 # [Setup VPN](https://www.duckdns.org/)
 
 - Login to get easy install directions
@@ -103,6 +105,8 @@ pivpn -qr
 
 - [Pivpn Docs](https://docs.pivpn.io/wireguard)
 
+-----
+
 # Home Assistant
 
 ## [Backup HomeAssistant]()
@@ -121,7 +125,7 @@ action:
 
 ## [Restore HomeAssistant]([https://www.home-assistant.io/integrations/backup/](https://www.home-assistant.io/common-tasks/os/#restoring-a-backup))
 
-
+-----
 
 # Nhl Setup
 + If you want to run the nhl project, use this section
