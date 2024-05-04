@@ -1,4 +1,4 @@
-## Initial Rpi Setup
+# Initial Rpi Setup
 
 ```
 sudo raspi-config
@@ -61,7 +61,7 @@ source rpiSetup.sh
 
 - Copy output and put in new ssh key
 
-##
+## Test Ssh
 
 ```
 cd && rm -rf computer-setup
@@ -69,7 +69,7 @@ git clone git@github.com:cole-titze/computer-setup.git
 cd computer-setup/Rpi/ && source nhlDeploy.sh
 ```
 
-# Add with crontab -e
+## Add with crontab -e
 
 ```
 # Constant updates
@@ -126,7 +126,7 @@ action:
 # Nhl Setup
 + If you want to run the nhl project, use this section
 
-# Add environment variables for each repo
+## Add environment variables for each repo
 
 - nhl-odds-web-backend
 
@@ -164,7 +164,7 @@ nano ~/secrets/.env-game-predictor
 nano ~/secrets/.env-log-loss-getter
 ```
 
-# Add with crontab -e
+## Add with crontab -e
 
 ```
 # Nhl applications running four times a day
@@ -181,7 +181,7 @@ nano ~/secrets/.env-log-loss-getter
 ```
 
 
-# Database Deployment
+## Database Deployment
 
 - This is not a polished process. Automating deploying mssql server to arm devices is not ideal, so most of this process is manual.
 - Connect to deployment server and update password in command and run:
