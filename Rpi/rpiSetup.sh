@@ -15,3 +15,6 @@ ssh-keygen -t ed25519 -C "cole.titze@outlook.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
+
+# Make backups directory
+mkdir -p ~/backups/homeassistant
