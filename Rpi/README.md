@@ -76,11 +76,14 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 # <VPN setup will add script here>
 
 # Nightly Updates and docker cleaning
-0 0 * * * /bin/bash ~/releases/Scripts/update.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/pi-hole.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/portainer.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/home-assistant.sh
-0 1 * * * /bin/bash ~/releases/Scripts/containers/magic-mirror.sh
+0 0 * * * /bin/bash ~/releases/scripts/update.sh
+0 1 * * * /bin/bash ~/releases/scripts/containers/pi-hole.sh
+0 1 * * * /bin/bash ~/releases/scripts/containers/portainer.sh
+0 1 * * * /bin/bash ~/releases/scripts/containers/home-assistant.sh
+0 1 * * * /bin/bash ~/releases/scripts/containers/magic-mirror.sh
+
+# Create backups
+0 4 * * * /bin/bash ~/releases/scripts/backups/home-assistant.sh
 ```
 
 -----
