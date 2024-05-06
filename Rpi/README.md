@@ -113,6 +113,10 @@ pivpn -qr
 # Home Assistant
 
 ## [Backup HomeAssistant](https://www.home-assistant.io/integrations/backup/)
++ To get backups to another computer (run from computer with cloud backups):
+```
+scp -r pi@10.0.0.19:~/backups/homeassistant ~/Desktop/HA_Backups
+```
 + If you already have backups running you can skip to the Restore section
 + Add the automation (Settings -> Automations & Scenes -> Create Automation -> <Three dots> -> Edit in yaml
 + Add the automation:
@@ -127,7 +131,10 @@ action:
 + This saves files to the homeAssistant config folder (/var/homeassistant/backups/)
 
 ## [Restore HomeAssistant](https://www.home-assistant.io/integrations/backup/#restoring-a-backup)
-+ TODO: Get your backup onto the pi
++ Get your backups onto the pi (run from computer with cloud backups):
+```
+scp -r ~/Desktop/HA_Backups pi@10.0.0.19:~/backups/homeassistant
+```
 + Run the restore command (config is held in var which needs super user permissions):
 ```
 cd ~/../../var/
