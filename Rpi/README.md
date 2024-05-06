@@ -127,6 +127,12 @@ action:
 + This saves files to the homeAssistant config folder (/var/homeassistant/backups/)
 
 ## [Restore HomeAssistant](https://www.home-assistant.io/integrations/backup/#restoring-a-backup)
++ Currently this is manual but eventually backups being pulled from the cloud and automatically created is the goal
++ TODO: Get your backup onto the pi
++ Run the restore command:
+```
+tar -xOf <backup_tar_file> "./homeassistant.tar.gz" | tar --strip-components=1 -zxf - -C <restore_directory ~/../../var/homeassistant>
+```
 
 -----
 
