@@ -112,7 +112,7 @@ pivpn -qr
 
 # Home Assistant
 
-## [Backup HomeAssistant]()
+## [Backup HomeAssistant](https://www.home-assistant.io/integrations/backup/)
 + If you already have backups running you can skip to the Restore section
 + Add the automation (Settings -> Automations & Scenes -> Create Automation -> <Three dots> -> Edit in yaml
 + Add the automation:
@@ -126,7 +126,7 @@ action:
 ```
 + This saves files to the homeAssistant config folder (/var/homeassistant/backups/)
 
-## [Restore HomeAssistant]([https://www.home-assistant.io/integrations/backup/](https://www.home-assistant.io/common-tasks/os/#restoring-a-backup))
+## [Restore HomeAssistant](https://www.home-assistant.io/common-tasks/os/#restoring-a-backup)
 
 -----
 
