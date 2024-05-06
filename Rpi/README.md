@@ -126,7 +126,7 @@ action:
 ```
 + This saves files to the homeAssistant config folder (/var/homeassistant/backups/)
 
-## [Restore HomeAssistant](https://www.home-assistant.io/common-tasks/os/#restoring-a-backup)
+## [Restore HomeAssistant](https://www.home-assistant.io/integrations/backup/#restoring-a-backup)
 
 -----
 
