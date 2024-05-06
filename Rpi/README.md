@@ -88,6 +88,14 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 
 -----
 
+# Setup Passwordless SSH
++ From the computer to ssh from:
+```
+ssh-copy-id pi@10.0.0.19
+```
+
+-----
+
 # [Setup VPN](https://www.duckdns.org/)
 
 - Login to get easy install directions
