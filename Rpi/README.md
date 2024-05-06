@@ -133,6 +133,7 @@ action:
 cd ~/../../var/
 mkdir homeassistant
 cd ~/backups/homeassistant
+sudo su
 tar -xOf $(ls -Art | tail -n 1) "./homeassistant.tar.gz" | tar --strip-components=1 -zxf - -C ~/../../var/homeassistant
 ```
 
