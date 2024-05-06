@@ -89,6 +89,10 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 -----
 
 # Setup Passwordless SSH
++ If you want to generate a new ssh key (macbook can skip):
+```
+ssh-keygen -t rsa
+```
 + From the computer to ssh from:
 ```
 ssh-copy-id pi@10.0.0.19
