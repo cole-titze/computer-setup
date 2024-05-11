@@ -145,7 +145,7 @@ action:
 ## [Restore HomeAssistant](https://www.home-assistant.io/integrations/backup/#restoring-a-backup)
 + Get your backups onto the pi (run from computer with cloud backups):
 ```
-scp ~/Desktop/HA_Backups/* pi@10.0.0.19:"~/backups/homeassistant"
+scp -p ~/Desktop/HA_Backups/* pi@10.0.0.19:"~/backups/homeassistant"
 ```
 + Run the restore command (config is held in var which needs super user permissions):
 ```
