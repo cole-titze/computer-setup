@@ -81,6 +81,7 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 0 1 * * * /bin/bash ~/releases/scripts/containers/portainer.sh
 0 1 * * * /bin/bash ~/releases/scripts/containers/home-assistant.sh
 0 1 * * * /bin/bash ~/releases/scripts/containers/magic-mirror.sh
+0 1 * * * /bin/bash ~/releases/scripts/containers/esphome.sh
 
 # Create backups
 0 4 * * * /bin/bash ~/releases/scripts/backups/home-assistant.sh
