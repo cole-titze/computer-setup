@@ -29,7 +29,10 @@ static ip_address=10.0.0.19/24
 static routers=10.0.0.1
 static domain_name_servers=10.0.0.1
 ```
-
+- Enable cgroup (used for limiting memory for docker conatiners)
+```
+sudo nano /boot/firmware/cmdline.txt
+```
 ```
 sudo reboot now
 ```
