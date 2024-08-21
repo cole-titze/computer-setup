@@ -18,3 +18,6 @@ cat ~/.ssh/id_ed25519.pub
 
 # Make backups directory
 mkdir -p ~/backups/homeassistant
+
+# Make models directory
+sudo mkdir /var/llm-models
