@@ -13,9 +13,11 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
 ## Set static ip
-+ If you run the vpn it will set up a static ip address for you
 
-+ Otherwise before bullseye this works:
+- If you run the vpn it will set up a static ip address for you
+
+- Otherwise before bullseye this works:
+
 ```
 sudo nano /etc/dhcpcd.conf
 ```
@@ -38,10 +40,13 @@ sudo reboot now
 ```
 
 ## Add custom bash commands
+
 ```
 sudo nano /root/.bashrc
 ```
-+ Add custom shutdown and restart to give time for docker containers to stop
+
+- Add custom shutdown and restart to give time for docker containers to stop
+
 ```
 # Custom shutdown and restart commands
 alias shutdown='sudo docker stop -t 600 $(docker ps -a -q) && sleep 5 && echo "Docker containers have been stopped." && sudo shutdown'
@@ -49,15 +54,14 @@ alias reboot='sudo docker stop -t 600 $(docker ps -a -q) && sleep 5 && echo "Doc
 alias dockerstop='sudo docker stop -t 600 $(docker ps -a -q) && sleep 5 && echo "Docker containers have been stopped."'
 ```
 
-
 ## Install git and clone repos
 
 ```
 sudo apt-get install git -y
 git clone https://github.com/cole-titze/computer-setup.git
-cd computer-setup/Rpi
+cd computer-setup/rpi/scripts/server
 chmod u+r+x *
-source rpiSetup.sh
+source setup.sh
 ```
 
 ## [Add key to github](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
@@ -69,7 +73,7 @@ source rpiSetup.sh
 ```
 cd && rm -rf computer-setup
 git clone git@github.com:cole-titze/computer-setup.git
-cd computer-setup/Rpi/ && source nhlDeploy.sh
+cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
 ```
 
 ## Add with crontab -e
@@ -79,31 +83,35 @@ cd computer-setup/Rpi/ && source nhlDeploy.sh
 # <VPN setup will add script here>
 
 # Nightly Updates and docker cleaning
-0 0 * * * /bin/bash ~/releases/scripts/update.sh
-0 1 * * * /bin/bash ~/releases/scripts/containers/pi-hole.sh
-0 1 * * * /bin/bash ~/releases/scripts/containers/portainer.sh
-0 1 * * * /bin/bash ~/releases/scripts/containers/home-assistant.sh
-0 1 * * * /bin/bash ~/releases/scripts/containers/magic-mirror.sh
-0 1 * * * /bin/bash ~/releases/scripts/containers/esphome.sh
-0 2 * * * /bin/bash ~/releases/scripts/containers/llm-web-backend.sh
+0 0 * * * /bin/bash ~/computer-setup/scripts/update.sh
+0 1 * * * /bin/bash ~/computer-setup/scripts/containers/pi-hole.sh
+0 1 * * * /bin/bash ~/computer-setup/scripts/containers/portainer.sh
+0 1 * * * /bin/bash ~/computer-setup/scripts/containers/home-assistant.sh
+0 1 * * * /bin/bash ~/computer-setup/scripts/containers/magic-mirror.sh
+0 1 * * * /bin/bash ~/computer-setup/scripts/containers/esphome.sh
+0 2 * * * /bin/bash ~/computer-setup/scripts/containers/llm-web-backend.sh
 
 # Create backups
-0 4 * * * /bin/bash ~/releases/scripts/backups/home-assistant.sh
+0 4 * * * /bin/bash ~/computer-setup/scripts/backups/home-assistant.sh
 ```
 
------
+---
 
 # Setup Passwordless SSH
-+ If you want to generate a new ssh key (macbook can skip):
+
+- If you want to generate a new ssh key (macbook can skip):
+
 ```
 ssh-keygen -t rsa
 ```
-+ From the computer to ssh from:
+
+- From the computer to ssh from:
+
 ```
 ssh-copy-id pi@10.0.0.19
 ```
 
------
+---
 
 # [Setup VPN](https://www.duckdns.org/)
 
@@ -115,6 +123,7 @@ ssh-copy-id pi@10.0.0.19
 ```
 curl -L https://install.pivpn.io | bash
 ```
+
 - During install use the duckdns domain instead of an ip (<domain>.duckdns.org)
 - Download wireguard app and scan qr from
 
@@ -125,18 +134,22 @@ pivpn -qr
 
 - [Pivpn Docs](https://docs.pivpn.io/wireguard)
 
------
+---
 
 # Home Assistant
 
 ## [Backup HomeAssistant](https://www.home-assistant.io/integrations/backup/)
-+ To get backups to another computer (run from computer with cloud backups):
+
+- To get backups to another computer (run from computer with cloud backups):
+
 ```
 scp pi@10.0.0.19:"~/backups/homeassistant/*" ~/Desktop/HA_Backups
 ```
-+ If you already have backups running you can skip to the Restore section
-+ Add the automation (Settings -> Automations & Scenes -> Create Automation -> <Three dots> -> Edit in yaml
-+ Add the automation:
+
+- If you already have backups running you can skip to the Restore section
+- Add the automation (Settings -> Automations & Scenes -> Create Automation -> <Three dots> -> Edit in yaml
+- Add the automation:
+
 ```
 trigger:
   platform: time
@@ -145,14 +158,19 @@ action:
   alias: "Create backup now"
   service: backup.create
 ```
-+ This saves files to the homeAssistant config folder (/var/homeassistant/backups/)
+
+- This saves files to the homeAssistant config folder (/var/homeassistant/backups/)
 
 ## [Restore HomeAssistant](https://www.home-assistant.io/integrations/backup/#restoring-a-backup)
-+ Get your backups onto the pi (run from computer with cloud backups):
+
+- Get your backups onto the pi (run from computer with cloud backups):
+
 ```
 scp -p ~/Desktop/HA_Backups/* pi@10.0.0.19:"~/backups/homeassistant"
 ```
-+ Run the restore command (config is held in var which needs super user permissions):
+
+- Run the restore command (config is held in var which needs super user permissions):
+
 ```
 cd ~/../../var/
 mkdir homeassistant
@@ -161,10 +179,11 @@ sudo su
 tar -xOf $(ls -Art | tail -n 1) "./homeassistant.tar.gz" | tar --strip-components=1 -zxf - -C ~/../../var/homeassistant
 ```
 
------
+---
 
 # Nhl Setup
-+ If you want to run the nhl project, use this section
+
+- If you want to run the nhl project, use this section
 
 ## Add environment variables for each repo
 
@@ -219,7 +238,6 @@ nano ~/secrets/.env-log-loss-getter
 0 5 * * * /bin/bash ~/releases/Scripts/nhl/nhl-game-predictor.sh
 0 6 * * * /bin/bash ~/releases/Scripts/nhl/nhl-log-loss-getter.sh
 ```
-
 
 ## Database Deployment
 
