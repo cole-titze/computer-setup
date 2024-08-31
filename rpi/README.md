@@ -179,6 +179,13 @@ sudo su
 tar -xOf $(ls -Art | tail -n 1) "./homeassistant.tar.gz" | tar --strip-components=1 -zxf - -C ~/../../var/homeassistant
 ```
 
+## Add LLM
++ The llama docker container will attempt to use a model in the following location: /var/llm-models/model.gguf
++ The directory is created through the setup scripts, so just move your model to the rpi's folder
+```
+scp <your-model.gguf> pi@deploypi:/var/llm-models/model.gguf
+```
+
 ---
 
 # Nhl Setup
