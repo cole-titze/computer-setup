@@ -113,6 +113,16 @@ ssh-copy-id pi@10.0.0.19
 
 ---
 
+# Setup PiHole
+## Inital setup
++ If restoring from backup, skip to backup section
++ The pihole container will already be running and good to go with initial setup
++ Add the pi to the local dns "local dns" -> domain (deploypi.local) -> ip (10.0.0.19)
+## Backup
++ TODO: create backup and restore method
+
+---
+
 # [Setup VPN](https://www.duckdns.org/)
 
 - Login to get easy install directions (github)
