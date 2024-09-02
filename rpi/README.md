@@ -115,7 +115,7 @@ ssh-copy-id pi@10.0.0.19
 
 # [Setup VPN](https://www.duckdns.org/)
 
-- Login to get easy install directions
+- Login to get easy install directions (github)
 - Follow the steps under "Install"
 - Port forward pi's ip (10.0.0.19:51820)
 - Download and run pivpn setup
