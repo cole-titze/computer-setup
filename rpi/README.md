@@ -123,8 +123,9 @@ ssh-copy-id pi@10.0.0.19
 ```
 curl -L https://install.pivpn.io | bash
 ```
-
-- During install use the duckdns domain instead of an ip (<domain>.duckdns.org)
+## During Install
+- Use pi ip (10.0.0.19) for DNS ip
+- Use the duckdns domain instead of an ip (<domain>.duckdns.org)
 - Download wireguard app and scan qr from
 
 ```
