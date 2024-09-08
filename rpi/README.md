@@ -80,7 +80,8 @@ cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
 
 ```
 # Constant updates
-# <VPN setup will add script here>
+# VPN setup will add script here, an example:
+*/5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
 
 # Nightly Updates and docker cleaning
 0 0 * * * /bin/bash ~/computer-setup/scripts/update.sh
