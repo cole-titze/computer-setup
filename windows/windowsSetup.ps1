@@ -1,4 +1,4 @@
-# Add last-pass extension after download and disable firefox pwd manager 
+# Add icloud from MS store
 winget install Mozilla.Firefox
 winget install Discord.Discord
 winget install Nvidia.GeForceExperience
@@ -17,16 +17,7 @@ winget install Python3
 git config --global user.email "cole.titze@outlook.com"
 git config --global user.name "Cole"
 
-# Not working
-winget install Apple.iTunes
-winget install LogMeIn.LastPass
-
 winget upgrade --all
 
-# Get repos
-git clone git@github.com:cole-titze/nhl-data-getter.git
-git clone git@github.com:cole-titze/nhl-data-cleaner.git
-git clone git@github.com:cole-titze/nhl-odds-web-backend.git
-git clone git@github.com:cole-titze/nhl-odds-web-frontend.git
-git clone git@github.com:cole-titze/nhl-game-predictor.git
-git clone git@github.com:cole-titze/nhl-log-loss-getter.git
+# Test getting repos
+git clone git@github.com:cole-titze/nhl-odds.git
