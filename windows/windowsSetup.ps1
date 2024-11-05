@@ -1,4 +1,4 @@
-# Add icloud from MS store
+# Download icloud and apple music from MS store
 winget install Mozilla.Firefox
 winget install Discord.Discord
 winget install Nvidia.GeForceExperience
