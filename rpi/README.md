@@ -85,19 +85,19 @@ cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
 */5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
 
 # Nightly Updates and docker cleaning
-0 0 * * * /bin/bash ~/computer-setup/rpi/scripts/server/update.sh
-0 1 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/pi-hole.sh
-0 1 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/portainer.sh
-0 1 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/home-assistant.sh
-0 1 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/magic-mirror.sh
-0 1 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/esphome.sh
-0 2 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/llm-web-backend.sh
+0 2 * * * /bin/bash ~/computer-setup/rpi/scripts/server/update.sh
+0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/pi-hole.sh
+0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/portainer.sh
+0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/home-assistant.sh
+0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/magic-mirror.sh
+0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/esphome.sh
+0 4 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/llm-web-backend.sh
 
 # Create backups
-0 4 * * * /bin/bash ~/computer-setup/rpi/scripts/backups/home-assistant.sh
+0 5 * * * /bin/bash ~/computer-setup/rpi/scripts/backups/home-assistant.sh
 
 # Start rpi statistics screen
-0 5 * * * /bin/bash ~/computer-setup/rpi/scripts/server/statistics.sh
+0 6 * * * /bin/bash ~/computer-setup/rpi/scripts/server/statistics.sh
 ```
 
 ---
