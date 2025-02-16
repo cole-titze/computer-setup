@@ -7,6 +7,7 @@ sudo raspi-config
 - Set ssh to yes
 - Update hostname to deploypi
 - Change timezone
+- Enable I2C (Interfacing Options > Enable I2C)
 
 ```
 sudo apt-get update -y && sudo apt-get upgrade -y
