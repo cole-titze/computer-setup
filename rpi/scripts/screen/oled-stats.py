@@ -1,6 +1,5 @@
 import time
 import psutil
-import smbus2
 from PIL import Image, ImageDraw, ImageFont
 from luma.oled.device import ssd1306
 from luma.core.interface.serial import i2c

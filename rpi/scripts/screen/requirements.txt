@@ -1,4 +1,3 @@
 luma.oled
 psutil
-smbus2
 pillow
