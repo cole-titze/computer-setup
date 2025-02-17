@@ -97,7 +97,7 @@ cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
 0 5 * * * /bin/bash ~/computer-setup/rpi/scripts/backups/home-assistant.sh
 
 # Start rpi statistics screen
-0 6 * * * /bin/bash ~/computer-setup/rpi/scripts/server/statistics.sh
+0 6 * * * /bin/bash ~/computer-setup/rpi/scripts/server/screen.sh
 ```
 
 ---
