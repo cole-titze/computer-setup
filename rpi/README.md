@@ -1,81 +1,5 @@
 # Initial Rpi Setup
-
-```
-sudo raspi-config
-```
-
-- Set ssh to yes
-- Update hostname to deploypi
-- Change timezone
-- Enable I2C (Interfacing Options > Enable I2C)
-
-```
-sudo apt-get update -y && sudo apt-get upgrade -y
-```
-
-## Set static ip
-
-- If you run the vpn it will set up a static ip address for you
-
-- Otherwise before bullseye this works:
-
-```
-sudo nano /etc/dhcpcd.conf
-```
-
-- Update hostname to deploypi
-
-```
-interface eth0
-metric 300
-static ip_address=10.0.0.19/24
-static routers=10.0.0.1
-static domain_name_servers=10.0.0.1
-```
-- Enable cgroup (used for limiting memory for docker conatiners)
-```
-sudo nano /boot/firmware/cmdline.txt
-```
-```
-sudo reboot now
-```
-
-## Add custom bash commands
-
-```
-sudo nano /root/.bashrc
-```
-
-- Add custom shutdown and restart to give time for docker containers to stop
-
-```
-# Custom shutdown and restart commands
-alias shutdown='sudo docker stop -t 600 $(docker ps -a -q) && sleep 5 && echo "Docker containers have been stopped." && sudo shutdown'
-alias reboot='sudo docker stop -t 600 $(docker ps -a -q) && sleep 5 && echo "Docker containers have been stopped." && sudo reboot'
-alias dockerstop='sudo docker stop -t 600 $(docker ps -a -q) && sleep 5 && echo "Docker containers have been stopped."'
-```
-
-## Install git and clone repos
-
-```
-sudo apt-get install git -y
-git clone https://github.com/cole-titze/computer-setup.git
-cd computer-setup/rpi/scripts/server
-chmod u+r+x *
-source setup.sh
-```
-
-## [Add key to github](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
-
-- Copy output and put in new ssh key
-
-## Test Ssh
-
-```
-cd && rm -rf computer-setup
-git clone git@github.com:cole-titze/computer-setup.git
-cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
-```
++ See the ansible repo for easy setup
 
 ## Add with crontab -e
 
@@ -85,10 +9,6 @@ cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
 */5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
 
 # Nightly Updates and docker cleaning
-0 2 * * * /bin/bash ~/computer-setup/rpi/scripts/server/update.sh
-0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/pi-hole.sh
-0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/portainer.sh
-0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/home-assistant.sh
 0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/magic-mirror.sh
 0 3 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/esphome.sh
 0 4 * * * /bin/bash ~/computer-setup/rpi/scripts/containers/llm-web-backend.sh
@@ -99,33 +19,6 @@ cd computer-setup/rpi/scripts/nhl && source nhl-deploy.sh
 # Start rpi statistics screen
 0 6 * * * /bin/bash ~/computer-setup/rpi/scripts/server/screen.sh
 ```
-
----
-
-# Setup Passwordless SSH
-
-- If you want to generate a new ssh key (macbook can skip):
-
-```
-ssh-keygen -t rsa
-```
-
-- From the computer to ssh from:
-
-```
-ssh-copy-id pi@10.0.0.19
-```
-
----
-
-# Setup PiHole
-## Inital setup
-+ If restoring from backup, skip to backup section
-+ The pihole container will already be running and good to go with initial setup
-+ Add the pi to the local dns "local dns" -> domain (deploypi.local) -> ip (10.0.0.19)
-## Backup
-+ TODO: create backup and restore method
-
 ---
 
 # [Setup VPN](https://www.duckdns.org/)
