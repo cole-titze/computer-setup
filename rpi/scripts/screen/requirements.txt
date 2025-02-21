@@ -1,3 +1,0 @@
-luma.oled
-psutil
-pillow
